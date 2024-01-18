@@ -10,12 +10,12 @@ from fedall.utils import FedAll as fa
 # Load the self-signed certificate and private key
 # In case where authentication and encryption are required
 
-certfile = 'certificate/server_certificate.crt'
-keyfile = 'certificate/server_private_key.key'
+CERT_FILE = "certificate/server_certificate.crt"
+KEY_FILE = "certificate/server_private_key.key"
 
 # The server can set the values for the following hyper parameters
-NumofClients = 2
-NumofRounds = 50
+NUM_CLIENTS = 2
+NUM_ROUNDS = 50
 
 # The following function will initialize the model
 # At this moment, the model values are hardcoded
@@ -30,10 +30,10 @@ initial_model = fa.initialize_model_server()
 # The features are represented as columns
 # The data points are represented as rows
 
-test_data = pandas.read_csv('test_data.csv', header=None)
+test_data = pandas.read_csv("test_data.csv", header=None)
 test_data = test_data.to_numpy()
 
 # The following function accepts certificate and keyfile as last two parameters
 # By default their values are set to None
 
-avg_model = fa.start_server(NumofClients, NumofRounds, initial_model, test_data) 
+avg_model = fa.start_server(NUM_CLIENTS, NUM_ROUNDS, initial_model, test_data)
