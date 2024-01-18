@@ -1,0 +1,40 @@
+# This workflow will install Python dependencies, run pylint with a variety of Python versions
+# For more information see:
+# https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+# Pipeline that checks branches that have been pushed to "master" OR are the source branch in a
+# newly created pull request into "master"
+
+name: FedAll Pylint Validation
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11"]
+        poetry-version: [1.7.1]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
+      - name: Install Python modules with poetry
+        run: |
+          poetry run pip install --upgrade pip
+          poetry install
+      - name: Pylint Validation
+        run: |
+          poetry run pylint fedall

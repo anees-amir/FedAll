@@ -1,0 +1,17 @@
+{
+    "editor.rulers": [
+        99
+    ],
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "pylint.interpreter": [
+        "${workspaceFolder}/.venv/bin/python"
+    ],
+    "pylint.args": [
+        "--rcfile=${workspaceFolder}/.pylintrc"
+    ],
+    "editor.defaultFormatter": "ms-python.black-formatter"
+}
