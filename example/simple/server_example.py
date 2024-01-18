@@ -1,5 +1,11 @@
-import FedAll as fa
+import os
+import sys
+
 import pandas
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
+from fedall.utils import FedAll as fa
 
 # Load the self-signed certificate and private key
 # In case where authentication and encryption are required
