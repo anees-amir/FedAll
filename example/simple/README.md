@@ -7,8 +7,6 @@ This is a simulation where the clients and server are all being run from the sam
 
 We assume that you have installed `FedAll` (instructions can be found [here]()).
 
-#### Manually
-
 1. Open one terminal, and the run the following:
 
 ```
