@@ -26,7 +26,7 @@ def start_server(NumofClients, NumofRounds, model, test_data, certfile=None, key
         avg_model = cp_server.compute_avg(sockets, NumofRounds, model, test_data)
 
         # Once the communication is done, the connections are closed
-        tcp_server.close_sockets(NumofClients, sockets)
+        tcp_server.close_sockets(sockets)
 
         return avg_model
     except Exception as e:

@@ -16,7 +16,7 @@ def create_sockets(NumofClients, certfile=None, keyfile=None):
         server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
         # The following will get the hostname (IP)
-        host = socket.getaddrinfo(socket.gethostname(), 1)[6][4][0]
+        # host = socket.getaddrinfo(socket.gethostname(), 1)[6][4][0]
 
         # The socket is bind with the specified hostname and the port
         server_socket.bind(('localhost', port))

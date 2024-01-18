@@ -2,7 +2,7 @@ import FedAll as fa
 import pandas
 
 # Load the self-signed certificate and private key
-# In case where authenticationa and encrytpion are required
+# In case where authentication and encryption are required
 
 certfile = 'certificate/server_certificate.crt'
 keyfile = 'certificate/server_private_key.key'
