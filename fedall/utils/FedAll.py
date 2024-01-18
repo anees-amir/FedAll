@@ -1,9 +1,8 @@
-import Server.comp_part_server as cp_server
-import Server.tcp_sockets_server as tcp_server
-import Server.ml_model as md
-
-import Client.tcp_sockets_client as tcp_client
-import Client.comp_part_client as cp_client
+from fedall.Server import comp_part_server as cp_server
+from fedall.Server import tcp_sockets_server as tcp_server
+from fedall.Server import ml_model as md
+from fedall.Client import tcp_sockets_client as tcp_client
+from fedall.Client import comp_part_client as cp_client
 
 def initialize_model_server():
     try:

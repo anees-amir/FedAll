@@ -1,6 +1,7 @@
 import numpy as np
-import Server.data_transfer_server as dt
-import Server.compute_loss_acc as la
+
+from fedall.Server import data_transfer_server as dt 
+from fedall.Server import compute_loss_acc as la 
 
 def compute_avg(sockets, NumofRounds, avg_model, Data):
     try:

@@ -1,5 +1,5 @@
-import Client.model_train_client as md
-import Client.data_transfer_client as dt
+from fedall.Client import model_train_client as md
+from fedall.Client import data_transfer_client as dt
 
 def comp_model(socket, Data, NumofRounds):
     try:

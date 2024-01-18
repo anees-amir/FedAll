@@ -1,6 +1,6 @@
-import Client.training as tr
+from fedall.Client import training as tr
+from fedall.Client import data_split as ds
 
-import Client.data_split as ds
 def training(Data, model):
     trainval, n = Data.shape
     n0 = n - 1
