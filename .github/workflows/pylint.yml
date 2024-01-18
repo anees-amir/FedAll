@@ -37,4 +37,4 @@ jobs:
           poetry install
       - name: Pylint Validation
         run: |
-          poetry run pylint pydicer
+          poetry run pylint fedall
