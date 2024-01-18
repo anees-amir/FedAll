@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "fedall"
+version = "0.0.1"
+description = "Federated learning framework"
+authors = ["Ingham Medical Physics"]
+license = "Apache License 2.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.1.4"
+poetry = "^1.7.1"
+black = "^23.12.1"
+pylint = "^3.0.3"
+
+[tool.poetry.group.dev.dependencies]
+
+[tool.poetry.group.docs.dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
