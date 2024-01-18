@@ -1,8 +1,17 @@
-import pandas
 import numpy as np
 
-def loss_acc(avg_model, Data):
 
+def loss_acc(avg_model, data):
+    # pylint: disable=C0103
+    """TODO
+
+    Args:
+        avg_model (_type_): _description_
+        data (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     # Assigning specific model parameters to the Weights matrices
     # and Bias vectors
     W1 = avg_model[0]
@@ -13,11 +22,11 @@ def loss_acc(avg_model, Data):
     b2 = avg_model[4]
     b3 = avg_model[5]
 
-    trainval, n = Data.shape
+    trainval, n = data.shape
     n0 = n - 1
 
-    x_test = Data[:, 0:n0].T
-    y_test = Data[:, n0]
+    x_test = data[:, 0:n0].T
+    y_test = data[:, n0]
 
     # Non linear sigmoid activation function
     def sigmoid(z):
@@ -35,10 +44,10 @@ def loss_acc(avg_model, Data):
     A3 = sigmoid(Z3)
 
     # Computing loss on testing data
-    Loss = (-1/trainval)*np.sum(y_test*np.log(A3) + (1-y_test)*np.log(1-A3))
+    Loss = (-1 / trainval) * np.sum(y_test * np.log(A3) + (1 - y_test) * np.log(1 - A3))
 
     # Computing accuracy on testing data
     pred_train = A3 > 0.5
-    Acc = 1 - np.sum(abs(pred_train - y_test))/trainval 
+    Acc = 1 - np.sum(abs(pred_train - y_test)) / trainval
 
     return Loss, Acc

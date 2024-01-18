@@ -1,20 +1,29 @@
 import numpy as np
 
-def data_x_y(Data):
-    m, n = Data.shape
+
+def data_x_y(data):
+    """TODO
+
+    Args:
+        data (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    m, n = data.shape
     n0 = n - 1
 
     # Centered around the mean
-    Data[:, 0:n-1] = Data[:, 0:n-1] - np.mean(Data[:, 0:n-1], 0)
+    data[:, 0 : n - 1] = data[:, 0 : n - 1] - np.mean(data[:, 0 : n - 1], 0)
 
     # For unshuffled data, comment the following two lines
     randseq = np.random.permutation(m)
-    Data = Data[randseq[0:m], 0:n]
+    data = data[randseq[0:m], 0:n]
 
     # Input features
-    x_train = Data[:, 0:n0].T
+    x_train = data[:, 0:n0].T
 
     # Output feature
-    y_train = Data[:, n0]
+    y_train = data[:, n0]
 
     return x_train, y_train

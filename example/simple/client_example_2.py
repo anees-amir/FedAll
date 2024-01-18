@@ -5,7 +5,7 @@ import pandas
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from fedall.utils import FedAll as fa
+from fedall.utils import fed_all as fa
 
 # Specify the server address in terms of IP and Port number
 SERVER_ADDRESS = "localhost:6005"
